@@ -14,8 +14,7 @@ namespace esphome
         {
 
             auto address_ = device.address();
-            if (address_[0] > 0)
-            {
+            
                 const uint64_t address = device.address_uint64();
                 for (auto &disc : this->already_discovered_)
                 {
@@ -28,8 +27,7 @@ namespace esphome
 
                 ESP_LOGI(TAG, "Found IGrill device Name: %s (MAC: %s)", device.get_name().c_str(), device.address_str().c_str());
                 return true;
-            }
-            return false;
+            
         }
 
         void IGrillBLEListener::on_scan_end()
