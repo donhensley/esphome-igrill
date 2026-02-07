@@ -14,7 +14,7 @@ namespace esphome
         {
 
             auto address_ = device.address();
-            if (address_[0] == 0x70 && address_[1] == 0x91 && address_[2] == 0x8F)
+            if (address_[0] == 0x70 && address_[1] == 0x91 && address_[2] == 0x8F) || (address_[0] == 0xD4 && address_[1] == 0x81 && address_[2] == 0xCA)
             {
                 const uint64_t address = device.address_uint64();
                 for (auto &disc : this->already_discovered_)
